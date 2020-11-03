@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Electricity for Future</string>
+
+    <string-array name="memberships">
+        <item>ADAC e-Charge</item>
+        <item>Plugsurfing</item>
+        <item>Telekom</item>
+        <item>NewMotion</item>
+    </string-array>
+
+    <string-array name="cars">
+        <item>Tesla Model 3</item>
+        <item>Tesla Model S</item>
+        <item>Renault Zoe</item>
+        <item>VW ID.3</item>
+    </string-array>
+</resources>
