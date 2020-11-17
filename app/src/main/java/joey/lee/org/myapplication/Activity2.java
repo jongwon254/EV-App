@@ -28,7 +28,8 @@ public class Activity2 extends AppCompatActivity {
 
     // Buttons
     private Button btn_back;
-    private Button btn_register2;
+    private Button btn_register;
+    private Button btn_login;
 
     // EditText Fields
     private EditText text_firstname;
@@ -62,16 +63,25 @@ public class Activity2 extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        // Getting information from EditText Fields
+        // Instance of EditText Fields
         text_firstname = findViewById(R.id.text_firstname);
         text_lastname = findViewById(R.id.text_lastname);
         text_email = findViewById(R.id.text_email);
         text_password = findViewById(R.id.text_password);
         text_confirmpassword = findViewById(R.id.text_confirmpassword);
 
+        // login
+        btn_login = findViewById(R.id.btn_login);
+        btn_login.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 startActivity(new Intent(Activity2.this, Activity3.class));
+             }
+         });
+
         // clicking on register button
-        btn_register2 = findViewById(R.id.btn_register2);
-        btn_register2.setOnClickListener(new View.OnClickListener() {
+        btn_register = findViewById(R.id.btn_register);
+        btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -116,6 +126,20 @@ public class Activity2 extends AppCompatActivity {
                                 user.put("last_name", last_name);
                                 user.put("email", email);
 
+                                DocumentReference documentReference1 = db.collection("users").document(userID).collection("statistics").document("car");
+                                Map<String, Object> car = new HashMap<>();
+                                car.put("today", "12");
+                                car.put("week", "39");
+                                car.put("month", "130");
+
+                                car.put("battery", "75");
+                                car.put("capacity", "94");
+                                car.put("lifetime", "November 2029");
+                                car.put("temperature", "11");
+                                car.put("status", "Normal");
+
+                                documentReference1.set(car);
+
                                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
@@ -123,7 +147,7 @@ public class Activity2 extends AppCompatActivity {
                                     }
                                 });
 
-                                startActivity(new Intent(Activity2.this, Activity4.class));
+                                startActivity(new Intent(Activity2.this, Activity5.class));
 
                             }
                         }

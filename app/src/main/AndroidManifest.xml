@@ -4,12 +4,49 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/app_icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".Activity7"></activity>
+        <activity android:name=".GoogleMapFilter"></activity>
+        <activity android:name=".SearchHistoryActivity" />
+        <activity android:name=".GoogleMap_Free" />
+        <activity android:name=".PayPhoneActivity_Free" />
+        <activity android:name=".DashboardActivity_Free" />
+        <activity android:name=".EnergyActivity_Free" />
+        <activity android:name=".BatteryActivity_Free" />
+        <activity android:name=".FilterActivity" />
+        <activity android:name=".TrialActivity2" />
+        <activity android:name=".TrialActivity" />
+        <activity android:name=".FavoritesActivity" />
+        <activity android:name=".NotifyActivity2" />
+        <activity android:name=".NotifyActivity" />
+        <activity android:name=".ContactActivity" />
+        <activity android:name=".ReferActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".PayPhoneActivity_4" />
+        <activity
+            android:name=".Pop_Energy"
+            android:theme="@style/Theme.MyApplication.CustomTheme" />
+        <activity android:name=".Activity5_3" />
+        <activity android:name=".EnergyActivity" />
+        <activity android:name=".PayPhoneActivity_3" />
+        <activity android:name=".PayPhoneActivity_2" />
+        <activity android:name=".PayPhoneActivity" />
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".BatteryActivity" />
+        <activity android:name=".GoogleMap" />
+        <activity android:name=".JSONActivity" />
+        <activity android:name=".TestCost" />
+        <activity android:name=".EnterCost" />
+        <activity android:name=".CarConnection3" />
+        <activity android:name=".CarConnection2" />
+        <activity android:name=".CarConnection" />
+        <activity android:name=".Activity5_2" />
+        <activity android:name=".GoingElectric" />
+        <activity android:name=".GoogleLogin" />
+        <activity android:name=".Activity7" />
         <activity android:name=".Activity6" />
         <activity android:name=".Activity5" />
         <activity android:name=".Activity4" />
@@ -17,17 +54,27 @@
         <activity android:name=".Activity2" />
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <meta-data android:name="com.here.sdk.access_key_id" android:value="kwe3YadDNVhNbAmrjqaqwg" />
-        <meta-data android:name="com.here.sdk.access_key_secret" android:value="633SYrdTV--ycLSj65kn9Nr2uHFlcCF1f4tNkPoALv-yCO9LfTsS5pPRtkv8dLCHEIKq3TXIaP3jWmlf-xLHEw"/>
-
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
+        <meta-data
+            android:name="com.here.sdk.access_key_id"
+            android:value="kwe3YadDNVhNbAmrjqaqwg" />
+        <meta-data
+            android:name="com.here.sdk.access_key_secret"
+            android:value="633SYrdTV--ycLSj65kn9Nr2uHFlcCF1f4tNkPoALv-yCO9LfTsS5pPRtkv8dLCHEIKq3TXIaP3jWmlf-xLHEw" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5507911385347863~5093799028" />
     </application>
-
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

@@ -16,6 +16,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+// test activity
 public class Activity6 extends AppCompatActivity {
 
     private TextView tv_name;

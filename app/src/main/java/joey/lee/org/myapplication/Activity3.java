@@ -31,7 +31,9 @@ public class Activity3 extends AppCompatActivity {
 
     // Buttons
     private Button btn_back;
-    private Button btn_login2;
+    private Button btn_login;
+    private Button btn_register;
+    private Button btn_google;
 
     // EditText Fields
     private EditText text_email;
@@ -39,7 +41,6 @@ public class Activity3 extends AppCompatActivity {
 
     // Authentication Server and Database
     private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthStateListener;
     private FirebaseFirestore db;
 
     private String userID;
@@ -51,34 +52,35 @@ public class Activity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_3);
 
+        // Instance
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
         text_email = findViewById(R.id.text_email);
         text_password = findViewById(R.id.text_password);
 
-        btn_login2 = findViewById(R.id.btn_login2);
+        btn_login = findViewById(R.id.btn_login);
+        btn_register = findViewById(R.id.btn_register);
+        btn_google = findViewById(R.id.btn_google);
 
-        /* automated login, not necessary yet
-        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
-
+        // register
+        btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser mFirebaseUser = mAuth.getCurrentUser();
-                if(mFirebaseUser != null) {
-                    Toast.makeText(Activity3.this, "Your are logged in", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Activity3.this, MainActivity.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(Activity3.this, "Please log in", Toast.LENGTH_SHORT).show();
-                }
-
+            public void onClick(View v) {
+                startActivity(new Intent(Activity3.this, Activity2.class));
             }
-        };
+        });
 
-         */
+        // google login
+        btn_google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Activity3.this, GoogleLogin.class));
+            }
+        });
 
-        btn_login2.setOnClickListener(new View.OnClickListener() {
+        // login
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -117,8 +119,8 @@ public class Activity3 extends AppCompatActivity {
                                         DocumentSnapshot document = task.getResult();
                                         subscription = document.getString("subscription");
 
-                                        if(subscription.equals("premium")) {
-                                            Intent intent = new Intent(Activity3.this, Activity6.class);
+                                        if(subscription.equals("premium") || subscription.equals("trial")) {
+                                            Intent intent = new Intent(Activity3.this, EnergyActivity.class);
                                             startActivity(intent);
                                         } else {
                                             Intent intent = new Intent(Activity3.this, Activity5.class);
@@ -146,22 +148,9 @@ public class Activity3 extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMainActivity();
+                finish();
             }
         });
     }
 
-    // go to main activity for back button
-    public void openMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    // automated login, not necessary yet
-   /* @Override
-    protected void onStart() {
-       super.onStart();
-       mAuth.addAuthStateListener(mAuthStateListener);
-    }
-    */
 }

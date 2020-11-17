@@ -7,31 +7,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
-import org.w3c.dom.Text;
-
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
+import java.util.List;
 
 // Home Activity
 public class MainActivity extends AppCompatActivity {
@@ -40,40 +30,41 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_login;
     private Button btn_register;
     private Button btn_google;
+    private Button btn_notify;
 
-    // google
-    private GoogleSignInClient mGoogleSignInClient;
-    private final static int RC_SIGN_IN = 123;
-
-    // database
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
-    private String userID;
-
-    private String first_name;
-    private String last_name;
-    private String email;
+    private Button btn_admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        GoogleMap googleMap = new GoogleMap();
+        googleMap.setRestart(0);
+
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
-        mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
-
-        // Functions for register and login buttons
+        // Instance for buttons
         btn_register = findViewById(R.id.btn_register);
         btn_login = findViewById(R.id.btn_login);
         btn_google = findViewById(R.id.btn_google);
+        btn_notify = findViewById(R.id.btn_notify);
+
+        btn_admin= findViewById(R.id.btn_admin);
+
+        // Button click
+        btn_notify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v) {
+                Intent intent = new Intent(MainActivity.this, NotifyActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
                 openActivity2();
-
             }
         });
 
@@ -84,116 +75,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // google login
-        createRequest();
-
         btn_google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                signIn();
+                openGoogleLogin();
+            }
+        });
+
+        btn_admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openAdmin();
             }
         });
     }
 
     // go to register activity for register button
     public void openActivity2() {
-        Intent intent = new Intent(this, Activity2.class);
+        Intent intent = new Intent(this, Activity2.class); //Activity2
         startActivity(intent);
     }
 
     // go to login activity for login button
     public void openActivity3() {
-        Intent intent = new Intent(this, Activity3.class);
+        Intent intent = new Intent(this, Activity3.class); //Activity3
         startActivity(intent);
     }
 
-    // create request to google
-    private void createRequest() {
-        // Configure Google Sign In
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-
-        // Build a GoogleSignInClient with the options specified by gso.
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
+    // go to google login
+    public void openGoogleLogin() {
+        Intent intent = new Intent(this, GoogleLogin.class);
+        startActivity(intent);
     }
 
-    // when user clicks on sign in button
-    private void signIn() {
-        mGoogleSignInClient.signOut();
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
+    // ADMIN BUTTON DELETE!
+    public void openAdmin() {
+        Intent intent = new Intent(this, EnergyActivity.class);
+        startActivity(intent);
     }
-
-    // get result from user
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                // Google Sign In was successful, authenticate with Firebase
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                firebaseAuthWithGoogle(account.getIdToken());
-            } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
-                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    private void firebaseAuthWithGoogle(String idToken) {
-        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
-        mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = mAuth.getCurrentUser();
-
-                            // Firestore Database to store personal information
-
-                            GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(MainActivity.this);
-                            if(signInAccount != null) {
-                                first_name = signInAccount.getGivenName();
-                                last_name = signInAccount.getFamilyName();
-                                email = signInAccount.getEmail();
-                            }
-
-                            //userID = user.getUid();
-                            userID = user.getUid();
-                            DocumentReference documentReference = db.collection("users").document(userID);
-                            Map<String, Object> google = new HashMap<>();
-                            google.put("first_name", first_name);
-                            google.put("last_name", last_name);
-                            google.put("email", email);
-
-                            documentReference.set(google).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast.makeText(MainActivity.this,"Google Login Successful", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-
-
-                            Intent intent = new Intent(MainActivity.this, Activity4.class);
-                            startActivity(intent);
-
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(MainActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
-
-                        }
-
-                    }
-                });
-    }
-
-
 
 }

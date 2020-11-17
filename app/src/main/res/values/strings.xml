@@ -2,16 +2,65 @@
     <string name="app_name">Electricity for Future</string>
 
     <string-array name="memberships">
+        <item>Schneider Solar</item>
         <item>ADAC e-Charge</item>
-        <item>Plugsurfing</item>
-        <item>Telekom</item>
-        <item>NewMotion</item>
+        <item>Plugsurfing Ladekarte / App</item>
+        <item>Shell Recharge Ladekarte/App</item>
     </string-array>
 
     <string-array name="cars">
-        <item>Tesla Model 3</item>
-        <item>Tesla Model S</item>
-        <item>Renault Zoe</item>
-        <item>VW ID.3</item>
+        <item>BMW</item>
+        <item>Tesla</item>
+        <item>Volkswagen</item>
+        <item>Renault</item>
+        <item>Porsche</item>
     </string-array>
+
+    <string-array name="model">
+        <item>i3</item>
+        <item>i8</item>
+        <item>iX3</item>
+    </string-array>
+
+    <string-array name="months">
+        <item>November</item>
+        <item>October</item>
+        <item>September</item>
+        <item>August</item>
+    </string-array>
+
+    <string-array name="brands">
+        <item>Select</item>
+        <item>ChargeNow</item>
+        <item>EnBW</item>
+        <item>Pfalzwerke</item>
+        <item>MVV eMotion</item>
+        <item>Comfortcharge</item>
+        <item>E.ON</item>
+        <item>NewMotion</item>
+    </string-array>
+
+    <string-array name="cards">
+        <item>Select</item>
+        <item>Schneider Solar</item>
+        <item>ADAC e-Charge</item>
+        <item>Plugsurfing Ladekarte / App</item>
+        <item>Shell Recharge Ladekarte/App</item>
+    </string-array>
+
+    <string-array name="plugs">
+        <item>Select</item>
+        <item>CCS</item>
+        <item>CHAdeMO</item>
+        <item>Tesla Supercharger</item>
+        <item>Schuko</item>
+        <item>Typ1</item>
+        <item>Typ2</item>
+    </string-array>
+
+    <string-array name="availabilities">
+        <item>All</item>
+        <item>Open Now</item>
+    </string-array>
+
 </resources>

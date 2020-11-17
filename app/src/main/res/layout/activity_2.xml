@@ -98,29 +98,42 @@
         app:layout_constraintVertical_bias="0.632" />
 
     <Button
-        style="?android:attr/borderlessButtonStyle"
         android:id="@+id/btn_back"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="45dp"
         android:layout_height="40dp"
-        android:backgroundTint="@android:color/transparent"
+        android:background="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintVertical_bias="0.047" />
 
     <Button
-        android:id="@+id/btn_register2"
+        android:id="@+id/btn_register"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="113dp"
-        android:layout_height="44dp"
-        android:backgroundTint="@android:color/transparent"
+        android:layout_width="152dp"
+        android:layout_height="47dp"
+        android:background="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
+        app:layout_constraintVertical_bias="0.961" />
+
+    <Button
+        android:id="@+id/btn_login"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="152dp"
+        android:layout_height="47dp"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.959" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

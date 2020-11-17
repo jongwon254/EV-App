@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GoogleMap">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/google_search"
+        android:queryHint="Search..."
+        android:iconifiedByDefault="false"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        android:background="@drawable/bg_round"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/bar" />
+
+    <Button
+        android:id="@+id/btn_back"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="126dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="5dp"
+        android:paddingTop="20dp" />
+
+    <Button
+        android:id="@+id/btn_filter"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="126dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="140dp"
+        android:paddingTop="20dp" />
+
+    <Button
+        android:id="@+id/btn_location"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="126dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="70dp"
+        android:paddingTop="20dp" />
+
+    <Button
+        android:id="@+id/btn_favorites"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="126dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="105dp"
+        android:textSize="10dp" />
+
+    <Button
+        android:id="@+id/btn_recommend"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="126dp"
+        android:layout_height="30dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_marginLeft="275dp"
+        android:layout_marginTop="105dp"
+        android:textSize="10dp" />
+
+    <Button
+        android:id="@+id/btn_search"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="126dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="140dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_marginTop="105dp"
+        android:textSize="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="301dp"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="432dp"
+            android:layout_height="238dp">
+
+            <Button
+                android:id="@+id/btn_addFavorite"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="26dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="150dp"
+                android:background="@drawable/back"
+                android:backgroundTint="@android:color/transparent"
+                android:paddingTop="20dp" />
+
+            <Button
+                android:id="@+id/btn_website"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="326dp"
+                android:layout_marginBottom="6dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:textColor="@color/blue"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/view_battery"
+                android:layout_width="24dp"
+                android:layout_height="26dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="328dp"
+                android:layout_marginBottom="104dp" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="371dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="59dp"
+
+                android:layout_marginBottom="161dp"
+                android:gravity="center"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="331dp"
+                android:layout_height="36dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="56dp"
+                android:layout_marginEnd="85dp"
+                android:layout_marginBottom="136dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="80dp"
+                android:layout_height="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="124dp"
+                android:layout_marginTop="146dp"
+                android:layout_marginEnd="228dp"
+                android:layout_marginBottom="66dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_network"
+                android:layout_width="77dp"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="124dp"
+                android:layout_marginTop="175dp"
+                android:layout_marginEnd="231dp"
+                android:layout_marginBottom="42dp"
+                android:gravity="center"
+                android:scrollbars="horizontal"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_id"
+                android:layout_width="71dp"
+                android:layout_height="14dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="176dp"
+                android:layout_marginEnd="337dp"
+                android:layout_marginBottom="38dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="75dp"
+                android:layout_height="16dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="144dp"
+                android:layout_marginEnd="331dp"
+                android:layout_marginBottom="68dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_consumption"
+                android:layout_width="228dp"
+                android:layout_height="32dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="113dp"
+                android:layout_marginTop="101dp"
+                android:layout_marginEnd="91dp"
+                android:layout_marginBottom="94dp"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_stations"
+                android:layout_width="170dp"
+                android:layout_height="64dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="232dp"
+                android:layout_marginTop="151dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="12dp"
+                android:scrollbars="vertical"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/toolbar" />
+
+            <Button
+                android:id="@+id/btn_dashboard"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="47dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="255dp"
+                android:background="?android:attr/selectableItemBackground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.711"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.98" />
+
+            <Button
+                android:id="@+id/btn_settings"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="47dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="325dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/selectableItemBackground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.98" />
+
+            <Button
+                android:id="@+id/btn_battery"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="47dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/selectableItemBackground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.315"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.98" />
+
+            <Button
+                android:id="@+id/btn_energy"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="47dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/selectableItemBackground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.118"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.98" />
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>
+

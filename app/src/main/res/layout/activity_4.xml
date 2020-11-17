@@ -9,50 +9,98 @@
 
     <Spinner
         android:id="@+id/spinner_car"
-        android:layout_width="255dp"
+        android:layout_width="322dp"
         android:layout_height="47dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintHorizontal_bias="0.382"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.72" />
+        app:layout_constraintVertical_bias="0.562" />
 
     <Spinner
-        android:id="@+id/spinner_membership"
-        android:layout_width="255dp"
+        android:id="@+id/spinner_model"
+        android:layout_width="322dp"
         android:layout_height="47dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintHorizontal_bias="0.382"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482" />
+        app:layout_constraintVertical_bias="0.69" />
 
     <Button
         android:id="@+id/btn_back"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="47dp"
         android:layout_height="44dp"
-        android:backgroundTint="@android:color/transparent"
+        android:background="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintVertical_bias="0.049" />
 
     <Button
         android:id="@+id/btn_next"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="85dp"
-        android:layout_height="40dp"
-        android:backgroundTint="@android:color/transparent"
+        android:layout_width="158dp"
+        android:layout_height="46dp"
+        android:background="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.914"
+        app:layout_constraintHorizontal_bias="0.845"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.885" />
+        app:layout_constraintVertical_bias="0.963" />
+
+    <CheckBox
+        android:id="@+id/cb1"
+        android:layout_width="179dp"
+        android:layout_height="44dp"
+        android:text="ADAC e-Charge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.389" />
+
+    <CheckBox
+        android:id="@+id/cb3"
+        android:layout_width="179dp"
+        android:layout_height="44dp"
+        android:text="Plugsurfing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.389" />
+
+    <CheckBox
+        android:id="@+id/cb2"
+        android:layout_width="179dp"
+        android:layout_height="42dp"
+        android:text="Shell Recharge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.453" />
+
+    <CheckBox
+        android:id="@+id/cb4"
+        android:layout_width="179dp"
+        android:layout_height="44dp"
+        android:text="Schneider Solar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.452" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

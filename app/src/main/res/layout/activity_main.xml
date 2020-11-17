@@ -12,7 +12,7 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="224dp"
         android:layout_height="53dp"
-        android:backgroundTint="@android:color/transparent"
+        android:background="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
@@ -25,23 +25,55 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="225dp"
         android:layout_height="46dp"
-        android:backgroundTint="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.499"
+        android:background="?android:attr/selectableItemBackground"/>
 
     <Button
         android:id="@+id/btn_google"
         android:layout_width="61dp"
         android:layout_height="44dp"
         style="?android:attr/borderlessButtonStyle"
-        android:backgroundTint="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684" />
+        app:layout_constraintVertical_bias="0.684"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <Button
+        android:id="@+id/btn_notify"
+
+        android:layout_width="113dp"
+        android:layout_height="52dp"
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.952"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <Button
+        android:id="@+id/btn_admin"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="113dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@android:color/transparent"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
