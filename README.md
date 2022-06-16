@@ -11,7 +11,7 @@ Android app for EV owners to enable a better charging and user experience.
 - REST APIs from GoingElectric, ChargePrice, and Google Maps
 
 ## Functionality
-- Login with social media account
+- Login with a social media account (Google or Facebook)
 - Create an individual profile for your EV
 - Access battery and charging expenses
 - Get all charging stations in Germany with relevant information, such as type, power, price, and supplier
