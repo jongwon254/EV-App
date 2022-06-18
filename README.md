@@ -1,7 +1,7 @@
 ![](https://user-images.githubusercontent.com/36485235/164819777-d3996167-3638-4b46-92b7-5df77483fde3.png)
 
 # EV App🔌
-Android app for EV owners to enable a better charging and user experience.
+Android app for EV owners to enable a smart vehicle and charging solution and a better user experience.
 
 ## Technologies
 - Language: Java
