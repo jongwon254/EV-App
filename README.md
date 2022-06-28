@@ -7,7 +7,7 @@ Android app for EV owners to enable a smart vehicle and charging solution and a 
 - Language: Java
 - Built with Android Studio, Firebase, XML, and JSON (Gson)
 - CI/CD with ASE, Jenkins, and Git
-- Designed with Adobe XD
+- Designed with Adobe XD and Figma
 - REST APIs from GoingElectric, ChargePrice, and Google Maps
 
 ## Functionality
