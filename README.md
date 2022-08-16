@@ -1,12 +1,11 @@
 ![](https://user-images.githubusercontent.com/36485235/164819777-d3996167-3638-4b46-92b7-5df77483fde3.png)
 
-# EV App🔌
+# EV App 
 Android app for EV owners to enable a smart vehicle and charging solution and a better user experience.
 
 ## Technologies
 - Language: Java
-- Built with Android Studio, Firebase, XML, and JSON (Gson)
-- CI/CD with ASE, Jenkins, and Git
+- Built in Android Studio with Firebase, CI/CD, and Jenkins
 - Designed with Adobe XD and Figma
 - REST APIs from GoingElectric, ChargePrice, and Google Maps
 
@@ -28,8 +27,6 @@ Android app for EV owners to enable a smart vehicle and charging solution and a 
 
 
 ## More Info
-[Visit App Demo](https://appetize.io/embed/7pn0wmyj7wtgpye4n9czy7yymr?device=pixel6&osVersion=12.0&scale=75)
-
 [Visit Release Website](https://electricityforfuture.wixsite.com/release)
 
 [Visit My Website](https://jongwonlee.dev/ev-app)
