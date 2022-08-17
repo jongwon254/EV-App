@@ -29,4 +29,4 @@ Android app for EV owners to enable a smart vehicle and charging solution and a 
 ## More Info
 [Visit Release Website](https://electricityforfuture.wixsite.com/release)
 
-[Visit My Website](https://jongwonlee.dev/ev-app)
+[Visit Website](https://jongwonlee.dev/ev-app)
