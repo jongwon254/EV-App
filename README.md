@@ -22,7 +22,6 @@ Android app for EV owners to enable a smart vehicle and charging solution and a 
 ## Screenshots
 
 ![](https://user-images.githubusercontent.com/36485235/164822115-fcdd4ada-8d49-4c3b-aa89-cdc3d50706b2.png)
-
 ![](https://user-images.githubusercontent.com/36485235/164822702-b98c2b38-ecb4-477f-88b6-9e5a730b5024.png)
 
 
